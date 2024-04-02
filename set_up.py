@@ -46,7 +46,7 @@ def display_board(arrangement):
     for i in range(arrangement.shape[0]):
         for j in range(arrangement.shape[1]):
             if arrangement[i][j] == 1:
-                plt.text(j, i, '♕', ha='center', va='center', color='black', fontsize=25, bbox=dict(facecolor='white', edgecolor='black', boxstyle='circle,pad=0.25'))
+                plt.text(j, i, '♕', ha='center', va='center', color='black', fontsize=20, bbox=dict(facecolor='white', edgecolor='black', boxstyle='circle,pad=0.20'))
 
     plt.xticks([])
     plt.yticks([])
