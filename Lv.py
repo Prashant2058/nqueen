@@ -35,5 +35,5 @@ def las_vegas(n):
     
     return result
 
-result = las_vegas(25)
+result = las_vegas(15)
 sp.display_board(result)
