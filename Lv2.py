@@ -9,7 +9,7 @@ def las_vegas(n):
     a = True
     atmpt = 0
     while(a):
-        print(atmpt)
+        #print(atmpt)
         atmpt +=1 
         result = create_boolean_array(n)
         valid_space = [ i for i in range( 0 , n*n )]
@@ -37,7 +37,21 @@ def las_vegas(n):
                     a = False
                 break
         
-    return result
+    return result,atmpt
 
-result = las_vegas(8)
-sp.display_board(result)
+n = 15
+result,atmpt = las_vegas(n)
+#print(atmpt)
+#sp.display_board(result)
+i = 0
+a = []
+result,atmpt = las_vegas(n)
+while i < 1000:
+    result,atmpt = las_vegas(n)
+    i += 1
+    a.append(atmpt)
+    print(atmpt)
+    
+print()
+avg = sum(a)/len(a)
+print('On Average for n =',n,'queens, it took',int(avg),'attempts')
