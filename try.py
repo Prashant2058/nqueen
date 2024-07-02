@@ -4,8 +4,8 @@ import numpy as np
 arrangement = np.array([[0, 1, 0, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 0, 1, 0]])
 sp.display_board(arrangement)
 
-n = 8
+n = 4
 i = 1
-j = 3
+j = 2
 result = sp.invalid_points(n, i, j)
 print("Points:", result)

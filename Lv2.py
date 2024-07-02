@@ -39,10 +39,10 @@ def las_vegas(n):
         
     return result,atmpt
 
-n = 15
+n = 20
 result,atmpt = las_vegas(n)
-#print(atmpt)
-#sp.display_board(result)
+print(atmpt)
+sp.display_board(result)
 i = 0
 a = []
 result,atmpt = las_vegas(n)
@@ -55,3 +55,4 @@ while i < 1000:
 print()
 avg = sum(a)/len(a)
 print('On Average for n =',n,'queens, it took',int(avg),'attempts')
+
