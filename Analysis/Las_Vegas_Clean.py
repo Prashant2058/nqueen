@@ -1,5 +1,6 @@
 import numpy as np
 import random
+import csv
 
 def invalid_points(n, i, j):
     points = set()
@@ -11,10 +12,11 @@ def invalid_points(n, i, j):
     points = {(p, q) for p, q in points if q >= 0 and q < n}
     return points
 
-
 def las_vegas(n):
     a = True
-    while(a): 
+    atmpt = 0
+    while(a):
+        atmpt +=1 
         result = np.ones((n , n))
         valid_space = [ i for i in range( 0 , n*n )]
         
@@ -41,7 +43,26 @@ def las_vegas(n):
                     a = False
                 break
         
-    return result
+    return result,atmpt
 
-ans = las_vegas(5)
-print(ans)
+for n in range(4,50):
+    i = 0
+    a = []
+
+    result,atmpt = las_vegas(n)
+    while i < 3000:
+        result,atmpt = las_vegas(n)
+        i += 1
+        a.append(atmpt)
+        
+    avg = int(sum(a)/len(a))
+
+    with open('lv_avg.csv', mode='a', newline='') as file:
+        writer = csv.writer(file)
+        file.seek(0, 2)  
+        if file.tell() == 0:
+            writer.writerow(["n", "Avg_Attempt"])
+        writer.writerow([n, avg])
+
+
+

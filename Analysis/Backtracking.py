@@ -34,7 +34,7 @@ def create_matrix(arr):
     return matrix
 
 
-for n in range(4,21):
+for n in range(4,50):
     solution = solve_nqueens(n)
 
     with open('back.csv', mode='a', newline='') as file:
